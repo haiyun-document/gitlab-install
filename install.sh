@@ -101,7 +101,7 @@ chmod -R g+rwx /home/git/repositories/
 chown -R git:git /home/git/repositories/
 
 curl -s -o /tmp/nginx-default https://github.com/ruedigerp/gitlab-install/blob/master/nginx-default
-cp -av /tmp/nginx-default /etx/nginx/sites-enabled/
+cp -av /tmp/nginx-default /etc/nginx/sites-enabled/
 
 touch /home/git/.first_installrun.lock
 
