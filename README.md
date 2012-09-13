@@ -7,7 +7,11 @@ gitlab-install
 Install
 =======
 
-curl -s https://github.com/ruedigerp/gitlab-install/blob/master/install.sh | sh 
+apt-get install curl git
+
+git clone https://github.com/ruedigerp/gitlab-install.git gitlab-install
+cd gitlab-install 
+cat install.sh | sh
 
 
 
