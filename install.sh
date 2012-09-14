@@ -10,7 +10,7 @@ fi
 export AUTOMODE=$1
 source ./install.conf
 
-function presseenter {
+function pressenter {
 	if [ "$AUTOMODE" == "auto" ]
 	then 
 		echo "automode"
@@ -19,14 +19,14 @@ function presseenter {
 	echo -n " Ready? Press Enter "
 	read X
 }
-echo -n "Install Base Packages."; presseenter
+echo -n "Install Base Packages."; pressenter
 apt-get install -y git git-core wget curl gcc checkinstall libxml2-dev sqlite3 libsqlite3-dev libcurl4-openssl-dev libc6-dev libssl-dev libmysql++-dev make build-essential zlib1g-dev libicu-dev redis-server openssh-server python-dev python-pip libyaml-dev postfix
 
 echo -n "Install nginx Server"; presseenter
 apt-get install -y nginx
 
-echo -n "Install Mysql Database" ; presseenter
-if [ "$MYSQL" eq 1 ]
+echo -n "Install Mysql Database" ; pressenter
+if [ "$MYSQL" == 1 ]
 then
 apt-get install -y mysql-server mysql-client libmysqlclient-dev
 fi
