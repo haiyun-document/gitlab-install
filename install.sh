@@ -22,7 +22,7 @@ function pressenter {
 echo -n "Install Base Packages."; pressenter
 apt-get install -y git git-core wget curl gcc checkinstall libxml2-dev sqlite3 libsqlite3-dev libcurl4-openssl-dev libc6-dev libssl-dev libmysql++-dev make build-essential zlib1g-dev libicu-dev redis-server openssh-server python-dev python-pip libyaml-dev postfix
 
-echo -n "Install nginx Server"; presseenter
+echo -n "Install nginx Server"; pressenter
 apt-get install -y nginx
 
 echo -n "Install Mysql Database" ; pressenter
@@ -59,6 +59,11 @@ sudo adduser \
 sudo adduser --disabled-login --gecos 'gitlab system' gitlab
 
 sudo usermod -a -G git gitlab
+
+echo -n "Set password for user git"; pressenter
+passwd git
+echo -n "Set password for user gitlab"; pressenter
+passwd gitlab
 
 echo -n "generate SSH-Key"; pressenter
 sudo -H -u gitlab ssh-keygen -q -N '' -t rsa -f /home/gitlab/.ssh/id_rsa
